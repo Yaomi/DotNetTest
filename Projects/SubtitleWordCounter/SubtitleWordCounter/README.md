@@ -1,0 +1,2 @@
+# Estimate how long it takes to make a list of (word,count) for all words. 
+- Basicaly all words are kept in tree structure, so retrieving a list of (word,count) is rather easy operation, just write a function which gathers full statistics from tree nodes.

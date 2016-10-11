@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -12,7 +13,20 @@ namespace FileMerger
 
         private static void Main(string[] args)
         {
+            Console.WriteLine("Merging files...");
+            Console.WriteLine();
+
+            var startAt = DateTime.Now;
+
             MergeFilesByFullName(InputDirectory, OutputDirectory);
+
+            var stopAt = DateTime.Now;
+
+            Console.WriteLine("Input data processed in {0} secs", new TimeSpan(stopAt.Ticks - startAt.Ticks).TotalSeconds);
+
+            Console.WriteLine();
+            Console.WriteLine("done.");
+            Console.ReadLine();
         }
 
         private static void MergeFilesByFullName(string inputDirectory, string outputDirectory)
